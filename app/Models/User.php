@@ -26,7 +26,10 @@ class User extends Authenticatable
         'country',
         'city',
         'rol',
-        'company'
+        'company',
+        'instagram',
+        'sort'
+
     ];
 
     /**

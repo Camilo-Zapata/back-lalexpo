@@ -8,6 +8,8 @@ use Log;
 use Illuminate\Support\Facades\Redirect;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\UsersExport;
+use Illuminate\Support\Facades\Hash;
+
 
 
 
@@ -35,7 +37,7 @@ class UserController extends Controller
             $usuario->rol = $request->rol;
             $usuario->company = $request->company;
             $usuario->sort = 0;
-            $usuario->password = $request->password;
+            $usuario->password = Hash::make($request->password);
             $usuario->instagram = $request->instagram;
             $success = $usuario->save();
                 

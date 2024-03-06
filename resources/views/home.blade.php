@@ -60,13 +60,9 @@
 
 
 
-
+    
 </div>
 {{ $usuarios->links() }}
 
 
-
-<script>
-    
-    </script>
 @endsection

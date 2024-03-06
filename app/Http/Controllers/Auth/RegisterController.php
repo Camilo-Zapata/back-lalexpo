@@ -8,6 +8,8 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Log;
+
 
 class RegisterController extends Controller
 {
@@ -64,6 +66,8 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        Log::info($data);
+
         return User::create([
             'name' => $data['name'],
             'last_name' => $data['last_name'],
@@ -72,7 +76,9 @@ class RegisterController extends Controller
             'phone' => $data['phone'],
             'country' => $data['country'],
             'city' => $data['city'],
+            'company' => $data['company'],
             'instagram' => $data['instagram'],
+            'rol' => $data['rol'],
             'sort' => 1,
 
         ]);
