@@ -18,6 +18,11 @@ use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('auth', ['only' => ['Users']]);
+    }
+
     public function export()
     {
         return Excel::download(new UsersExport, 'usuarios.xlsx');
@@ -100,7 +105,7 @@ class UserController extends Controller
 
         } catch (\Throwable $th) {
             Log::info($th);
-            return response()->json(["success" => false, 'message' => 'Algo salió mal al sincronizar los datos.'], 500);
+            return response()->json(["success" => false, 'message' => 'Algo salió mal al sincronizar los datos.'], 500)->back();
         }
         
     }

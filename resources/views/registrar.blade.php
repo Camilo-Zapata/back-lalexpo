@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Registrame') }}</div>
+                <div class="card-header">{{ __('Registrar Participantes') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('Registrar') }}">
@@ -64,7 +64,7 @@
                             <label for="phone" class="col-md-4 col-form-label text-md-end">{{ __('Telefono') }}</label>
 
                             <div class="col-md-6">
-                                <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}">
+                                <input id="phone" type="number" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}">
 
                                 @error('phone')
                                     <span class="invalid-feedback" role="alert">
@@ -81,7 +81,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Cedula') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="text" class="form-control @error('password') is-invalid @enderror" name="password" value="{{ old('password') }}" required>
+                                <input id="password" type="number" class="form-control @error('password') is-invalid @enderror" name="password" value="{{ old('password') }}" required>
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
